@@ -1,0 +1,2 @@
+Hva er verdens høyeste fjell?fjell1;fjell2;fjell3;fjell4;4
+Hva er verdens største by?by1;by2;by3;by4;2
