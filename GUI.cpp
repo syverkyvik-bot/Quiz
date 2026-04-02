@@ -5,7 +5,6 @@ GUI::GUI(TDT4102::Point position, int width, int height, const string& title, qu
     
     AnimationWindow{position.x, position.y, width, height, title},
     quiz{obj},
-    //questionBox{{100, 100}, 500, 100, ""},
     option1{button1Location,buttonWidth,buttonHeight, obj.getOptions()[0]},
     option2{button2Location,buttonWidth,buttonHeight, obj.getOptions()[1]},
     option3{button3Location,buttonWidth,buttonHeight, obj.getOptions()[2]},
@@ -25,7 +24,6 @@ GUI::GUI(TDT4102::Point position, int width, int height, const string& title, qu
     option4.setButtonColor(TDT4102::Color::purple);
     nextQuestionButton.setButtonColor(TDT4102::Color::yellow);
 
-    //add(questionBox);
     add(option1);
     add(option2);
     add(option3);
@@ -39,12 +37,9 @@ void GUI::displayQuestion(){
     TDT4102::Point location {100, 100};
     std::string message = quiz.getQuestion();
     TDT4102::Color textColor = TDT4102::Color::blue;
-    int fontSize = 50;
+    int fontSize = 35;
     TDT4102::Font font = TDT4102::Font::arial;
     draw_text(location, message, textColor, fontSize, font);
-    
-    //questionBox.setText(quiz.getQuestion());
-    
 }
 
 void GUI::dummy(){}
@@ -57,69 +52,50 @@ int GUI::getScore(){
     return GUI::score;
 }
 
-void GUI::checkAnswer1(){
-    int number = 1;
-    if (number == GUI::quiz.getAnswer()){
-        option1.setButtonColor(TDT4102::Color::green);
+void GUI::checkAnswer(int buttonNumber){
+    TDT4102::Button* buttonName;
+    
+    switch (buttonNumber) {
+        case 1:
+            buttonName = &option1;
+            break;
+        case 2:
+            buttonName = &option2;
+            break;
+        case 3:
+            buttonName = &option3;
+            break;
+        case 4:
+            buttonName = &option4;
+            break;
+    }
+
+    if (buttonNumber == GUI::quiz.getAnswer()){
+        buttonName->setButtonColor(TDT4102::Color::green);
         GUI::addScore();
         cout << "riktig " << GUI::getScore() <<"\n";
     }
     else{
         cout << "feil" << "\n";
-        option1.setButtonColor(TDT4102::Color::red);
+        buttonName->setButtonColor(TDT4102::Color::red);
     }
     option1.setCallback(std::bind(&GUI::dummy,this));
     option2.setCallback(std::bind(&GUI::dummy,this));
     option3.setCallback(std::bind(&GUI::dummy,this));
     option4.setCallback(std::bind(&GUI::dummy,this));
+
+}
+void GUI::checkAnswer1(){
+    checkAnswer(1);
 }
 void GUI::checkAnswer2(){
-    int number = 2;
-    if (number == GUI::quiz.getAnswer()){
-        option2.setButtonColor(TDT4102::Color::green);
-        GUI::addScore();
-        cout << "riktig " << GUI::getScore() <<"\n";
-    }
-    else{
-        cout << "feil" << "\n";
-        option2.setButtonColor(TDT4102::Color::red);
-    }
-    option1.setCallback(std::bind(&GUI::dummy,this));
-    option2.setCallback(std::bind(&GUI::dummy,this));
-    option3.setCallback(std::bind(&GUI::dummy,this));
-    option4.setCallback(std::bind(&GUI::dummy,this));
+    checkAnswer(2);
 }
 void GUI::checkAnswer3(){
-    int number = 3;
-    if (number == GUI::quiz.getAnswer()){
-        option3.setButtonColor(TDT4102::Color::green);
-        GUI::addScore();
-        cout << "riktig " << GUI::getScore() <<"\n";
-    }
-    else{
-        cout << "feil" << "\n";
-        option3.setButtonColor(TDT4102::Color::red);
-    }
-    option1.setCallback(std::bind(&GUI::dummy,this));
-    option2.setCallback(std::bind(&GUI::dummy,this));
-    option3.setCallback(std::bind(&GUI::dummy,this));
-    option4.setCallback(std::bind(&GUI::dummy,this));
+    checkAnswer(3);
 }
 void GUI::checkAnswer4(){
-    int number = 4;
-    if (number == GUI::quiz.getAnswer()){
-        option4.setButtonColor(TDT4102::Color::green);
-        GUI::addScore();
-        cout << "riktig " << GUI::getScore() <<"\n";
-    }
-    else{
-        cout << "feil" << "\n";
-        option4.setButtonColor(TDT4102::Color::red);
-    }
-    option1.setCallback(std::bind(&GUI::dummy,this));
-    option2.setCallback(std::bind(&GUI::dummy,this));
-    option3.setCallback(std::bind(&GUI::dummy,this));
-    option4.setCallback(std::bind(&GUI::dummy,this));
+    checkAnswer(4);
 }
 
 void GUI::nextQuestion(){
@@ -156,7 +132,7 @@ void GUI::displayScore(){
     TDT4102::Point location {250, 300};
     std::string message = "your score is: " + std::to_string(GUI::getScore());
     TDT4102::Color textColor = TDT4102::Color::blue;
-    int fontSize = 80;
+    int fontSize = 35;
     GUI::draw_text(location, message, textColor, fontSize);    
 }
 

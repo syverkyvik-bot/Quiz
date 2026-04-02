@@ -10,8 +10,8 @@ using namespace std;
 class GUI : public TDT4102::AnimationWindow{
     
     private:
-    int buttonWidth = 300;
-    int buttonHeight = 100; 
+    unsigned int buttonWidth = 300;
+    unsigned int buttonHeight = 100; 
     
     TDT4102::Point button1Location {100, 300};
     TDT4102::Point button2Location {500, 300};
@@ -19,7 +19,6 @@ class GUI : public TDT4102::AnimationWindow{
     TDT4102::Point button4Location {500, 500};
     TDT4102::Point nextQuestionLocation {850, 500};
 
-    //TDT4102::TextBox questionBox;
     TDT4102::Button option1;
     TDT4102::Button option2;
     TDT4102::Button option3;
@@ -40,7 +39,8 @@ class GUI : public TDT4102::AnimationWindow{
   
     void updateOptions();
     void displayQuestion();
-        
+    
+    void checkAnswer(int number);
     void checkAnswer1();
     void checkAnswer2();
     void checkAnswer3();
