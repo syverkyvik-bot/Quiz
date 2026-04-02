@@ -18,12 +18,14 @@ class GUI : public TDT4102::AnimationWindow{
     TDT4102::Point button3Location {100, 500};
     TDT4102::Point button4Location {500, 500};
     TDT4102::Point nextQuestionLocation {850, 500};
-
+    /*
     TDT4102::Button option1;
     TDT4102::Button option2;
     TDT4102::Button option3;
     TDT4102::Button option4;
+*/
     TDT4102::Button nextQuestionButton;
+    std::vector<TDT4102::Button> optionButtons;
     
     int score =0;
     questions& quiz;
