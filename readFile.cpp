@@ -1,4 +1,4 @@
-#include "readFIle.h"
+#include "readFile.h"
 
 using namespace std;
 
@@ -37,7 +37,7 @@ void questions::setOptionsAndAnswer(){
     questions::options.clear();
 
     string nextOption;
-    int i = questions::question.size(); // +1 for å ikke ta med ?
+    int i = questions::question.size()+1; // +1 for å ikke ta med ?
     
     while(i < questions::fullQuestion.size()-1) { // -1 for å ikke ta med svaret
         if(questions::fullQuestion[i] != ';'){

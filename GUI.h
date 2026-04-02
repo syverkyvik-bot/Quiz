@@ -2,7 +2,8 @@
 #include <iostream>
 #include "AnimationWindow.h"
 #include "widgets/Button.h"
-#include "readFIle.h"
+#include "widgets/TextBox.h"
+#include "readFile.h"
 
 using namespace std;
 
@@ -18,23 +19,25 @@ class GUI : public TDT4102::AnimationWindow{
     TDT4102::Point button4Location {500, 500};
     TDT4102::Point nextQuestionLocation {850, 500};
 
+    //TDT4102::TextBox questionBox;
     TDT4102::Button option1;
     TDT4102::Button option2;
     TDT4102::Button option3;
     TDT4102::Button option4;
     TDT4102::Button nextQuestionButton;
     
-    int score;
+    int score =0;
     questions& quiz;
 
     public:
     GUI(TDT4102::Point position, int width, int height, const string& title, questions& obj);
     
     bool nextFrame = false;
-    /*
+    
     void addScore();
     int getScore();
-*/  
+    void displayScore();
+  
     void updateOptions();
     void displayQuestion();
         

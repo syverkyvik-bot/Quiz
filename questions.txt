@@ -1,2 +1,10 @@
-Hva er verdens høyeste fjell?fjell1;fjell2;fjell3;fjell4;4
-Hva er verdens største by?by1;by2;by3;by4;2
+Hva er hovedstaden i Norge?;Oslo;Bergen;Trondheim;Stavanger;1
+Hvilken planet er nærmest solen?;Venus;Mars;Merkur;Jorden;3
+Hvor mange kontinenter finnes det?;5;6;7;8;3
+Hvem malte Mona Lisa?;Vincent van Gogh;Leonardo da Vinci;Pablo Picasso;Claude Monet;2
+Hva er det kjemiske symbolet for vann?;O2;CO2;H2O;NaCl;3
+Hvilket land er kjent for pyramider i Giza?;Mexico;India;Egypt;Peru;3
+Hva er 7 ganger 8?;54;56;58;64;2
+Hvilket språk brukes mest i Brasil?;Spansk;Portugisisk;Engelsk;Fransk;2
+Hva heter den største verdensdelen?;Europa;Afrika;Asia;Sør-Amerika;3
+Hvilket dyr er kjent som kongen av jungelen?;Tiger;Elefant;Løve;Bjørn;3

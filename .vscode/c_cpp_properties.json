@@ -49,7 +49,7 @@
             "cStandard": "c17",
             "cppStandard": "c++23",
             "compileCommands": "build/compile_commands.json",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-arm"
         }
     ],
     "version": 4
