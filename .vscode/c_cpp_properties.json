@@ -39,7 +39,11 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/subprojects/animationwindow/include/**",
+                "${workspaceFolder}/subprojects/sdl2_image/include/**",
+                "${workspaceFolder}/subprojects/sdl2_mixer/include/**",
+                "${workspaceFolder}/subprojects/sdl2/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -48,8 +52,8 @@
             ],
             "cStandard": "c17",
             "cppStandard": "c++23",
-            "compileCommands": "build/compile_commands.json",
-            "intelliSenseMode": "linux-gcc-arm"
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
