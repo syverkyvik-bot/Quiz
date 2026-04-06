@@ -14,7 +14,7 @@ private:
     string question;
     vector<string> options;
     
-    int answer;
+    size_t answer;
         
     void setFullQuestion(ifstream& inputStream);
     void setQuestion();
@@ -28,7 +28,7 @@ public:
     
     string getQuestion();
     vector<string> getOptions();
-    int getAnswer();
+    size_t getAnswer();
     bool isFinished(ifstream& inputStream);
     friend ostream& operator<<(std::ostream& os, const questions& p);
 };

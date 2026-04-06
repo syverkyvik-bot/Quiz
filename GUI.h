@@ -42,7 +42,7 @@ class GUI : public TDT4102::AnimationWindow{
     void updateOptions();
     void displayQuestion();
     
-    void checkAnswer(int number);
+    void checkAnswer(size_t number);
     void checkAnswer1();
     void checkAnswer2();
     void checkAnswer3();

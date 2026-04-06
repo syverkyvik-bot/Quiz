@@ -8,15 +8,18 @@ using namespace std;
 
 int main(){
 
+    // opens the file, and sets the first question, options and answer
     ifstream inputStream{"questions.txt"};
     questions q;
     
     q.openFile(inputStream);
     q.setQuestionOptionsAnswer(inputStream);      
     
+    // creates the window, and displays the first question
     GUI wm({300,100}, 1100, 700, "Quiz", q);
     wm.displayQuestion();
     
+    // main loop, checks for events and displays the next question when nextFrame is true, which happens when the next question button is clicked
     while(!wm.should_close()){
         wm.next_frame();
         wm.displayQuestion();
