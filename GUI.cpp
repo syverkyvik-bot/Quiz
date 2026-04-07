@@ -93,9 +93,10 @@ void GUI::displayScore(){
     
     this->next_frame();
 
+    draw_rectangle({90, 200}, 900, 250, TDT4102::Color::dark_cyan);
     TDT4102::Point location {400, 300};
     std::string message = "your score is: " + std::to_string(GUI::getScore());
-    TDT4102::Color textColor = TDT4102::Color::blue;
+    TDT4102::Color textColor = TDT4102::Color::white;
     int fontSize = 35;
     GUI::draw_text(location, message, textColor, fontSize);
     
@@ -106,7 +107,7 @@ void GUI::displayScore(){
     }
     
     location.y += 50;
-    location.x -= 50;
+    location.x -= 70;
     GUI::draw_text(location, message, textColor, fontSize);
     
 }
